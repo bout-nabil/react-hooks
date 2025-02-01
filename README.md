@@ -53,8 +53,8 @@ Pour chaque exercice :
 
 _Votre réponse pour l'exercice 1 :_
 ```
-Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
+J'ai implémenter une recherche en temps réel avec un debounce. J'ai aussi introduire un hook personnalisé useDebounce pour gérer le délai entre les changements de recherche.
+
 ```
 
 ### Exercice 2 : Context et Internationalisation
