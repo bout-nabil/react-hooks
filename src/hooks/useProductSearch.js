@@ -1,12 +1,53 @@
 import { useState, useEffect } from 'react';
 
 // TODO: Exercice 3.1 - Créer le hook useDebounce
-// TODO: Exercice 3.2 - Créer le hook useLocalStorage
+const useDebounce = (value, delay) => {
+  const [debouncedValue, setDebouncedValue] = useState(value);
 
-const useProductSearch = () => {
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [value, delay]);
+
+  return debouncedValue;
+};
+// TODO: Exercice 3.2 - Créer le hook useLocalStorage
+const useLocalStorage = (key, initialValue) => {
+  const [storedValue, setStoredValue] = useState(() => {
+    try {
+      const item = localStorage.getItem(key);
+      return item ? JSON.parse(item) : initialValue;
+    } catch (error) {
+      console.error("Erreur lors de la récupération du localStorage", error);
+      return initialValue;
+    }
+  });
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(key, JSON.stringify(storedValue));
+    } catch (error) {
+      console.error("Erreur lors de l'enregistrement dans localStorage", error);
+    }
+  }, [key, storedValue]);
+
+  return [storedValue, setStoredValue];
+};
+
+const useProductSearch = (searchTerm) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const [page, setPage] = useLocalStorage('currentPage', 1);
+  const [totalPages, setTotalPages] = useState(1);
+
+  const debouncedSearchTerm = useDebounce(searchTerm, 500);
   // TODO: Exercice 4.2 - Ajouter l'état pour la pagination
 
   useEffect(() => {

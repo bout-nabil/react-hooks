@@ -81,8 +81,9 @@ Traduction dynamique dans ProductSearch et ProductList
 
 _Votre réponse pour l'exercice 3 :_
 ```
-Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
+J'ajoute useDebounce qui gère le délai avant d’appliquer une mise à jour.
+J'ajoute useLocalStorage qui permet de stocker et récupérer des données dans localStorage.
+
 ```
 
 ### Exercice 4 : Gestion Asynchrone et Pagination
