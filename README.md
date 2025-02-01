@@ -54,6 +54,8 @@ Pour chaque exercice :
 _Votre réponse pour l'exercice 1 :_
 ```
 J'ai implémenter une recherche en temps réel avec un debounce. J'ai aussi introduire un hook personnalisé useDebounce pour gérer le délai entre les changements de recherche.
+![debounceSearch](https://github.com/user-attachments/assets/e6bff9e7-65fb-4a13-836e-2749b8bc631e)
+
 
 ```
 
@@ -68,7 +70,9 @@ _Votre réponse pour l'exercice 2 :_
 ```
 Ajout du LanguageContext 
 Sélecteur de langue dans App 
-Traduction dynamique dans ProductSearch et ProductList 
+Traduction dynamique dans ProductSearch et ProductList
+
+![LanguageText code](https://github.com/user-attachments/assets/7aa7070a-4eba-4a39-9f7c-78bd1933fb6f)
 
 ```
 
@@ -84,6 +88,10 @@ _Votre réponse pour l'exercice 3 :_
 J'ajoute useDebounce qui gère le délai avant d’appliquer une mise à jour.
 J'ajoute useLocalStorage qui permet de stocker et récupérer des données dans localStorage.
 
+![useDebounce](https://github.com/user-attachments/assets/50e657e9-51f0-40db-b4d1-68a281e98dbe)
+![useLocaleStorage](https://github.com/user-attachments/assets/58d08e76-8b06-4003-a5d1-64551fd6ceef)
+
+
 ```
 
 ### Exercice 4 : Gestion Asynchrone et Pagination
@@ -98,7 +106,10 @@ _Votre réponse pour l'exercice 4 :_
 J'ai ajouté la pagination en mettant à jour l'URL de l'API avec les paramètres de requête page et limit, et j'ai inclus la page dans les dépendances useEffect.
 La fonction reloadProducts réinitialise la page à 1, ce qui permet de recharger les produits à partir de la première page.
 Les fonctions nextPage et prevPage vous aident à naviguer dans les pages en ajustant l'état de la page.
-[Ajoutez vos captures d'écran]
+
+![page number](https://github.com/user-attachments/assets/3a3dccba-b32c-4d6e-bfc6-b394ec97edad)
+![Reload button](https://github.com/user-attachments/assets/fc136690-2983-4586-9497-75b71013bc4b)
+
 ```
 
 ## Rendu
