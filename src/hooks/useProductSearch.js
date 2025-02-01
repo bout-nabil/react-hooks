@@ -54,11 +54,12 @@ const useProductSearch = (searchTerm) => {
     const fetchProducts = async () => {
       try {
         // TODO: Exercice 4.2 - Modifier l'URL pour inclure les paramètres de pagination
-        const response = await fetch('https://api.daaif.net/products?delay=1000');
+        const response = await fetch( `https://api.daaif.net/products?page=${page}&limit=10&search=${debouncedSearchTerm}`);
         if (!response.ok) throw new Error('Erreur réseau');
         const data = await response.json();
         setProducts(data.products);
         setLoading(false);
+        setTotalPages(data.totalPages); 
       } catch (err) {
         setError(err.message);
         setLoading(false);
@@ -69,14 +70,33 @@ const useProductSearch = (searchTerm) => {
   }, []); // TODO: Exercice 4.2 - Ajouter les dépendances pour la pagination
 
   // TODO: Exercice 4.1 - Ajouter la fonction de rechargement
+  const reloadProducts = () => {
+    setPage(1);  // Reset page to 1
+  };
   // TODO: Exercice 4.2 - Ajouter les fonctions pour la pagination
+  const nextPage = () => {
+    if (page < totalPages) {
+      setPage(page + 1);
+    }
+  };
 
+  const prevPage = () => {
+    if (page > 1) {
+      setPage(page - 1);
+    }
+  };
   return { 
     products, 
     loading, 
     error,
+    page,
     // TODO: Exercice 4.1 - Retourner la fonction de rechargement
+    setPage,
+    totalPages,
     // TODO: Exercice 4.2 - Retourner les fonctions et états de pagination
+    reloadProducts,
+    nextPage,
+    prevPage
   };
 };
 

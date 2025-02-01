@@ -95,7 +95,9 @@ J'ajoute useLocalStorage qui permet de stocker et récupérer des données dans 
 
 _Votre réponse pour l'exercice 4 :_
 ```
-Expliquez votre solution ici
+J'ai ajouté la pagination en mettant à jour l'URL de l'API avec les paramètres de requête page et limit, et j'ai inclus la page dans les dépendances useEffect.
+La fonction reloadProducts réinitialise la page à 1, ce qui permet de recharger les produits à partir de la première page.
+Les fonctions nextPage et prevPage vous aident à naviguer dans les pages en ajustant l'état de la page.
 [Ajoutez vos captures d'écran]
 ```
 
