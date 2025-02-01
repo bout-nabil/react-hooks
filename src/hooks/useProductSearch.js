@@ -44,12 +44,11 @@ const useProductSearch = (searchTerm) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // TODO: Exercice 4.2 - Ajouter l'état pour la pagination
   const [page, setPage] = useLocalStorage('currentPage', 1);
   const [totalPages, setTotalPages] = useState(1);
-
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
-  // TODO: Exercice 4.2 - Ajouter l'état pour la pagination
-
+  
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -67,7 +66,7 @@ const useProductSearch = (searchTerm) => {
     };
 
     fetchProducts();
-  }, []); // TODO: Exercice 4.2 - Ajouter les dépendances pour la pagination
+  }, [page, debouncedSearchTerm]); // TODO: Exercice 4.2 - Ajouter les dépendances pour la pagination
 
   // TODO: Exercice 4.1 - Ajouter la fonction de rechargement
   const reloadProducts = () => {
