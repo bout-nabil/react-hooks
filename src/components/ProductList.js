@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from '../App';
+import { ThemeContext, LanguageContext } from '../App';
 import useProductSearch from '../hooks/useProductSearch';
 
 const ProductList = () => {
   const { isDarkTheme } = useContext(ThemeContext);
   // TODO: Exercice 2.1 - Utiliser le LanguageContext pour les traductions
-  
+  const { language, translations } = useContext(LanguageContext);
+
   const { 
     products, 
     loading, 

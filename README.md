@@ -66,8 +66,10 @@ J'ai implémenter une recherche en temps réel avec un debounce. J'ai aussi intr
 
 _Votre réponse pour l'exercice 2 :_
 ```
-Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
+Ajout du LanguageContext 
+Sélecteur de langue dans App 
+Traduction dynamique dans ProductSearch et ProductList 
+
 ```
 
 ### Exercice 3 : Hooks Personnalisés
