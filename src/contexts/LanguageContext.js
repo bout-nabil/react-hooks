@@ -12,6 +12,7 @@ const translations = {
     price: "Price:",
     previous: "Previous",
     next: "Next",
+    reload: "Reload"
   },
   fr: {
     searchPlaceholder: "Rechercher un produit...",
@@ -20,6 +21,7 @@ const translations = {
     price: "Prix:",
     previous: "Précédent",
     next: "Suivant",
+    reload: "Rechargement"
   },
 };
 

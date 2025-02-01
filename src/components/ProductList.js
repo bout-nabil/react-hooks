@@ -39,8 +39,8 @@ const ProductList = () => {
       {/* Reload Button */}
       <div className="text-center my-3">
         <button onClick={reloadProducts} className="btn btn-primary">
-          {translations[language].reload} {/* Assuming you've added this translation */}
-        </button>
+          {translations[language].reload} {language === 'en' ? 'Reload' : 'Rechargement'} 
+         </button>
       </div>
       {/* TODO: Exercice 4.1 - Ajouter le bouton de rechargement */}
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
